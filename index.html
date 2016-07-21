@@ -1,102 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Ringhub - Chainmaille</title>
+  <title>Chainmaille - RingHUB</title>
   <meta charset="utf-8">
   <link href="favicon.ico" rel="shortcut icon" type="image/icon"
 </head>
 <body style="margin: 0;">
 
-  <script src="js/three.min.js"></script>
-  <script src="js/OrbitControls.js"></script>
-
-  <script>
-
-    // Set up the scene, camera, and renderer as global variables.
-    var scene, camera, renderer;
-
-    init();
-    animate();
-
-    // Sets up the scene.
-    function init() {
-
-      // Create the scene and set the scene size.
-      scene = new THREE.Scene();
-      var WIDTH = window.innerWidth,
-          HEIGHT = window.innerHeight;
-
-      // Create a renderer and add it to the DOM.
-      renderer = new THREE.WebGLRenderer({antialias:true});
-      renderer.setSize(WIDTH, HEIGHT);
-      renderer.shadowMapEnabled = true;
-      document.body.appendChild(renderer.domElement);
-
-      // Create a camera, zoom it out from the model a bit, and add it to the scene.
-      camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10000);
-      camera.position.z = 200;
-      scene.add(camera);
-
-      // Create an event listener that resizes the renderer with the browser window.
-      window.addEventListener( 'resize', onWindowResize, false );
-
-      // Set the background color of the scene.
-      renderer.setClearColor(0xf0f0f0, 1);
-
-      // Create a light, set its position, and add it to the scene.
-      scene.add( new THREE.AmbientLight ( 0x505050 ) );
-
-      var light = new THREE.SpotLight( 0xffffff, 1.5 );
-      light.position.set( 0, 500, 200);
-      light.castShadow = true;
-
-      // frin draggable cubes example three.js
-      light.shadow = new THREE.LightShadow( new THREE.PerspectiveCamera( 50, 1, 200, 10000 ) );
-      light.shadow.bias = - 0.00022;
-      light.shadow.mapSize.width = 2048;
-      light.shadow.mapSize.height = 2048;
-
-      scene.add(light);
-
-      // Load in the mesh and add it to the scene.
-      var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-      var material = new THREE.MeshLambertMaterial( {color: 0xff0000} );
-      var torus = new THREE.Mesh( geometry, material );
-      torus.castShadow = true;
-      torus.receiveShadow = true;
-      scene.add(torus);
-
-      var geometry2 = new THREE.TorusGeometry( 10, 3, 16, 100 );
-      var material2 = new THREE.MeshLambertMaterial( {color: 0x00ff00} );
-      var torus2 = new THREE.Mesh( geometry2, material2 );
-      torus2.castShadow = true;
-      torus2.receiveShadow = true;
-      torus2.position.set(50, 50, 0);
-      scene.add(torus2);
-
-      // Add OrbitControls so that we can pan around with the mouse.
-      controls = new THREE.OrbitControls(camera, renderer.domElement);
-    }
-
-    // Renders the scene and updates the render as needed.
-    function animate() {
-
-      // Read more about requestAnimationFrame at http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
-      requestAnimationFrame(animate);
-
-      // Render the scene.
-      renderer.render(scene, camera);
-      controls.update();
-    }
-
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize( window.innerWidth, window.innerHeight );
-    }
-
-  </script>
+  <script src="js/three.js"></script>
+  <script src="js/TrackballControls.js"></script>
+  <script src="js/stats.min.js"></script>
+  <script src="js/ringhub.js"></script>
 
 </body>
 </html>
