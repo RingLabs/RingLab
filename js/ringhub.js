@@ -18,6 +18,7 @@ function init() {
   container = document.createElement( 'div' );
   document.body.appendChild( container );
 
+
   // Create the scene and set the scene size.
   scene = new THREE.Scene();
 
@@ -31,7 +32,7 @@ function init() {
   controls.rotateSpeed = 5.0;
   controls.zoomSpeed = 1.2;
   controls.panSpeed = 0.8;
-  controls.noRotate = false;
+  controls.noRotate = true;
   controls.noZoom = false;
   controls.noPan = false;
   controls.staticMoving = true;
@@ -69,31 +70,11 @@ function init() {
   renderer.domElement.addEventListener( 'mouseup', onDocumentMouseUp, false );
   window.addEventListener( 'resize', onWindowResize, false );
 
-  // Load in the mesh and add it to the scene.
-  var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-  for( var i = 0; i < 500; i++)
-  {
-    var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
-
-    object.position.x = Math.random() * 1000 - 500;
-    object.position.y = Math.random() * 600 - 300;
-    object.position.z = Math.random() * 800 - 400;
-
-    object.rotation.x = Math.random() * 2 * Math.PI;
-    object.rotation.y = Math.random() * 2 * Math.PI;
-    object.rotation.z = Math.random() * 2 * Math.PI;
-
-    object.scale.x = Math.random() * 2 + 1;
-    object.scale.y = Math.random() * 2 + 1;
-    object.scale.z = Math.random() * 2 + 1;
-
-    object.castShadow = true;
-    object.receiveShadow = true;
-
-    scene.add( object );
-
-    objects.push( object );
-  }
+  //button setup
+  var addBtn = document.getElementById( 'add_ring' );
+  addBtn.addEventListener( 'click', function() {
+    addRing();
+  }, false);
 }
 
 function animate() {
@@ -207,4 +188,20 @@ function onDocumentMouseUp( event ) {
 
 	container.style.cursor = 'auto';
 
+}
+
+function addRing() {
+  // Load in the mesh and add it to the scene.
+  var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+  var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+
+  object.position.x = 0;
+  object.position.y = 0;
+  object.position.z = 0;
+
+  object.castShadow = true;
+  object.receiveShadow = true;
+
+  scene.add( object );
+  objects.push( object );
 }
