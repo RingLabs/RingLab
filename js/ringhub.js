@@ -31,7 +31,7 @@ function init() {
   controls.rotateSpeed = 5.0;
   controls.zoomSpeed = 1.2;
   controls.panSpeed = 0.8;
-  controls.noRotate = true;
+  controls.noRotate = false;
   controls.noZoom = false;
   controls.noPan = false;
   controls.staticMoving = true;
@@ -71,22 +71,29 @@ function init() {
 
   // Load in the mesh and add it to the scene.
   var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-  var material = new THREE.MeshLambertMaterial( {color: 0xff0000} );
-  var torus = new THREE.Mesh( geometry, material );
-  torus.castShadow = true;
-  torus.receiveShadow = true;
-  scene.add(torus);
-  objects.push(torus);
+  for( var i = 0; i < 500; i++)
+  {
+    var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
 
-  var geometry2 = new THREE.TorusGeometry( 10, 3, 16, 100 );
-  var material2 = new THREE.MeshLambertMaterial( {color: 0x00ff00} );
-  var torus2 = new THREE.Mesh( geometry2, material2 );
-  torus2.castShadow = true;
-  torus2.receiveShadow = true;
-  torus2.position.set(50, 50, 0);
-  scene.add(torus2);
-  objects.push(torus2);
+    object.position.x = Math.random() * 1000 - 500;
+    object.position.y = Math.random() * 600 - 300;
+    object.position.z = Math.random() * 800 - 400;
 
+    object.rotation.x = Math.random() * 2 * Math.PI;
+    object.rotation.y = Math.random() * 2 * Math.PI;
+    object.rotation.z = Math.random() * 2 * Math.PI;
+
+    object.scale.x = Math.random() * 2 + 1;
+    object.scale.y = Math.random() * 2 + 1;
+    object.scale.z = Math.random() * 2 + 1;
+
+    object.castShadow = true;
+    object.receiveShadow = true;
+
+    scene.add( object );
+
+    objects.push( object );
+  }
 }
 
 function animate() {
