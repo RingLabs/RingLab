@@ -61,7 +61,7 @@ function init() {
 
   container.appendChild( renderer.domElement );
 
-  var stats = new Stats();
+  stats = new Stats();
   container.appendChild( stats.dom );
 
   //event listeners
