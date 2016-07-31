@@ -40,7 +40,7 @@ function init() {
 
   //lighting
   scene.add( new THREE.AmbientLight ( 0x505050 ) );
-  var light = new THREE.SpotLight( 0xffffff, 1.5 );
+  var light = new THREE.PointLight( 0xffffff, 1.5 );
   light.position.set( 0, 500, 200);
   light.castShadow = true;
   light.shadow = new THREE.LightShadow( new THREE.PerspectiveCamera( 50, 1, 200, 10000 ) );
@@ -193,7 +193,20 @@ function onDocumentMouseUp( event ) {
 function addRing() {
   // Load in the mesh and add it to the scene.
   var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
-  var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+  var object = new THREE.Mesh( geometry, new THREE.MeshPhongMaterial( { color: Math.random() * 0xffffff, metal: true, shinyness:0 } ) );
+
+  object.position.x = 0;
+  object.position.y = 0;
+  object.position.z = 0;
+
+  object.castShadow = true;
+  object.receiveShadow = true;
+
+  scene.add( object );
+  objects.push( object );
+
+  var geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+  var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff} ) );
 
   object.position.x = 0;
   object.position.y = 0;
