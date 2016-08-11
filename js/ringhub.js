@@ -15,7 +15,7 @@ animate();
 // Sets up the scene.
 function init() {
 
-  container = document.createElement( 'div' );
+  container = document.getElementById( 'canvas' );
   document.body.appendChild( container );
 
 
@@ -23,7 +23,7 @@ function init() {
   scene = new THREE.Scene();
 
   //camera
-  camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
+  camera = new THREE.PerspectiveCamera( 70, container.clientWidth / window.innerHeight, 1, 10000 );
   camera.position.z = 200;
   scene.add(camera);
 
@@ -53,7 +53,7 @@ function init() {
   renderer = new THREE.WebGLRenderer( {antialias:true} );
   renderer.setClearColor( 0xf0f0f0 );
   renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.setSize( container.clientWidth, window.innerHeight );
   renderer.sortObjects = false;
 
   renderer.shadowMapEnabled = true;
@@ -90,18 +90,18 @@ function render() {
 }
 
 function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = container.clientWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 
-  renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.setSize( container.innerWidth, window.innerHeight );
 }
 
 function onDocumentMouseMove( event ) {
 
 	event.preventDefault();
 
-	mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+	mouse.x = ( (event.clientX - renderer.domElement.offsetLeft)/ renderer.domElement.width ) * 2 - 1;
+	mouse.y = - ( (event.clientY - renderer.domElement.offsetTop)/ renderer.domElement.height ) * 2 + 1;
 
 	raycaster.setFromCamera( mouse, camera );
 

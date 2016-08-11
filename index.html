@@ -41,14 +41,36 @@
 </head>
 <body style="margin: 0;">
 
+  <nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0px;">
+    <div class=container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Ring Labs</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Page 1</a></li>
+        <li><a href="#">Page 2</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="container-fluid" style="padding:0px;">
+    <div class="row">
+      <div class="col-sm-8" id="canvas" style="position: static;">
+      </div>
 
-  <div id="side_bar">
-    <button id="add_ring">Add Ring</button>
-  </div>
+      <div class="col-sm-4">
+        <button id="add_ring">Add Ring</button>
+      </div>
+    </div>
+  <div>
   <script src="js/three.js"></script>
   <script src="js/TrackballControls.js"></script>
   <script src="js/stats.min.js"></script>
   <script src="js/ringhub.js"></script>
-
 </body>
 </html>
