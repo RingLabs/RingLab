@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-	
 <head>
   <meta charset="utf-8">
   <link href="favicon.ico" rel="shortcut icon" type="image/icon">
@@ -18,13 +17,19 @@
       display: block;
     }
 
-    #add_ring {
-      z-index: 1;
+    button {
+        text-align: center;
+    }
 
-      top: 10px;
-      right: 10px;
+    #cpanel {
+        z-index: 1;
+        top: 0px;
+        right: 0px;
+        width: 500px;
+        height: 100%;
+        position: absolute;
 
-      position: absolute;
+        background-color: white;
     }
 
     #side_bar {
@@ -41,27 +46,20 @@
 </head>
 <body style="margin: 0;">
 
-  <!--<nav class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0px;">
-    <div class=container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Ring Labs</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+  <div id="cpanel">
+    <div id="color-select" style="padding:10px; width: 100%; height: 25%; position: relative;">
+        <form>
+            <input type=color" name="favcolor" value="#FF0000">
+        </form>
     </div>
-  </nav>-->
-  
-  <button id="add_ring">Add Ring</button>
+    <div id="mat-select" style="padding:10px; width: 100%; height: 25%; position: relative;"></div>
+    <div id="ring-meta" style="padding:10px; width: 100%; height: 40%; position: relative;"></div>
+    <button id="add_ring" type="button" class="btn btn-primary" style="position: absolute; margin: auto 25%; bottom: 10px; width: 50%;">Add Ring</button>
+  </div>
+
   <script src="js/three.js"></script>
   <script src="js/TrackballControls.js"></script>
   <script src="js/stats.min.js"></script>
-  <script src="js/ringhub.js"></script>
+  <script src="js/workbench.js"></script>
 </body>
 </html>
