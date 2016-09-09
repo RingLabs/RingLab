@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+}
+
+canvas {
+  z-index: 0;
+  display: block;
+}
+
+button {
+    text-align: center;
+}
+
+#cpanel {
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    width: 500px;
+    height: 100%;
+    position: absolute;
+
+    background-color: white;
+}
+
+#side_bar {
+  z-index: 1;
+
+  height: 100%;
+  right: 0px;
+  left: calc(100% - 400px);
+
+  background-color: white;
+  position: absolute;
+}
