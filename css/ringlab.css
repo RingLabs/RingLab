@@ -2,6 +2,14 @@ html {
   height: 100%;
 }
 
+* {
+  font-family: 'Muli', sans-serif;
+}
+
+.material-icons, .icon-text {
+  vertical-align: middle;
+}
+
 canvas {
   z-index: 0;
   display: block;
@@ -11,7 +19,7 @@ button {
     text-align: center;
 }
 
-#cpanel {
+.options-panel {
     z-index: 1;
     top: 0px;
     right: 0px;
@@ -21,6 +29,63 @@ button {
 
     background-color: white;
 }
+
+/* Tabbable Panel With Lines from http://bootsnipp.com/snippets/featured/bootstrap-line-tabs-by-keenthemes
+     Licensed under MIT */
+.tabbable-panel {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+.tabbable-line > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+.tabbable-line > .nav-tabs > li {
+  margin-right: 2px;
+}
+.tabbable-line > .nav-tabs > li > a {
+  border: 0;
+  color: #737373;
+}
+.tabbable-line > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.tabbable-line > .nav-tabs > li.active {
+  border-bottom: 4px solid #f3565d;
+  position: relative;
+}
+.tabbable-line > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.tabbable-line > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.tabbable-line > .tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .tabbable-line > .tab-content {
+  padding-bottom: 0;
+}
+/*end of keenthemes Tabbable Panel With Line*/
 
 #side_bar {
   z-index: 1;

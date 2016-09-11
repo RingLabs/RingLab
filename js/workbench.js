@@ -32,7 +32,7 @@ function init() {
 	controls.rotateSpeed = 5.0;
 	controls.zoomSpeed = 1.2;
 	controls.panSpeed = 0.8;
-	controls.noRotate = true;
+	controls.noRotate = false;
 	controls.noZoom = false;
 	controls.noPan = false;
 	controls.staticMoving = true;
