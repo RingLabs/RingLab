@@ -56,7 +56,7 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.sortObjects = false;
 
-	renderer.shadowMapEnabled = true;
+	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.PCFShadowMap;
 
 	container.appendChild( renderer.domElement );
