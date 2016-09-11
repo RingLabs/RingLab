@@ -10,6 +10,14 @@ html {
   vertical-align: middle;
 }
 
+.checkbox {
+  padding: 10px;
+}
+
+.checkbox > .material-icons {
+  padding-left: 10px;
+}
+
 canvas {
   z-index: 0;
   display: block;
