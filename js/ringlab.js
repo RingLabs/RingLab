@@ -210,3 +210,13 @@ function togglePan() {
 function toggleRotate() {
 	controls.noRotate = controls.noRotate ? false : true;
 }
+
+window.onload = function () {
+	var input = document.querySelector('#rotationCheckbox');
+
+  function check() {
+    input.checked ? controls.noRotate = false : controls.noRotate = true;
+	}
+  input.onchange = check;
+  check();
+}
