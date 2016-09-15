@@ -221,7 +221,8 @@ window.onload = function () {
     panCheckboxInput.checked ? controls.noPan = false : controls.noPan = true;
     zoomCheckboxInput.checked ? controls.noZoom = false : controls.noZoom = true;
 	}
-  rotationCheckboxInput.onchange = check;
+
+	rotationCheckboxInput.onchange = check;
   panCheckboxInput.onchange = check;
   zoomCheckboxInput.onchange = check;
   check();
