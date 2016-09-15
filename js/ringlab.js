@@ -212,11 +212,17 @@ function toggleRotate() {
 }
 
 window.onload = function () {
-	var input = document.querySelector('#rotationCheckbox');
+	var rotationCheckboxInput = document.querySelector('#rotationCheckbox');
+	var panCheckboxInput = document.querySelector('#panCheckbox');
+	var zoomCheckboxInput = document.querySelector('#zoomCheckbox');
 
   function check() {
-    input.checked ? controls.noRotate = false : controls.noRotate = true;
+    rotationCheckboxInput.checked ? controls.noRotate = false : controls.noRotate = true;
+    panCheckboxInput.checked ? controls.noPan = false : controls.noPan = true;
+    zoomCheckboxInput.checked ? controls.noZoom = false : controls.noZoom = true;
 	}
-  input.onchange = check;
+  rotationCheckboxInput.onchange = check;
+  panCheckboxInput.onchange = check;
+  zoomCheckboxInput.onchange = check;
   check();
 }
