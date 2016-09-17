@@ -28,25 +28,55 @@
       <div class="tabbable-line">
         <ul class="nav nav-tabs">
           <li class="active">
-            <a href="#tab_default_1" data-toggle="tab"> <i class="material-icons">color_lens</i> Colors</a>
+            <a href="#properties_tab" data-toggle="tab"> <i class="material-icons">settings</i> Ring Properties</a>
           </li>
           <li class="">
-            <a href="#tab_default_2" data-toggle="tab"> <i class="material-icons">tune</i> Controls</a>
+            <a href="#controls_tab" data-toggle="tab"> <i class="material-icons">tune</i> Controls</a>
           </li>
           <li>
-            <a href="#tab_default_3" data-toggle="tab"> <i class="material-icons">code</i> Code</a>
+            <a href="#code_tab" data-toggle="tab"> <i class="material-icons">code</i> Code</a>
           </li>
           <li>
-            <a href="#tab_default_4" data-toggle="tab"> <i class="material-icons">help</i> Help</a>
+            <a href="#help_tab" data-toggle="tab"> <i class="material-icons">help</i> Help</a>
           </li>
         </ul>
         <div class="tab-content">
-          <div class="tab-pane active" id="tab_default_1">
-            <p>
-              I'm in Tab 1
-            </p>
+          <div class="tab-pane active" id="properties_tab">
+            <div class="tabbable-panel">
+              <div class="tabbable-line">
+                <ul class="nav nav-tabs">
+                  <li class="active">
+                    <a href="#colours_tab" data-toggle="tab"> <i class="material-icons">palette</i> Colours</a>
+                  </li>
+                  <li class="">
+                    <a href="#texture_tab" data-toggle="tab"> <i class="material-icons">texture</i> Texture</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_3" data-toggle="tab"> <i class="material-icons">code</i> Code</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_4" data-toggle="tab"> <i class="material-icons">help</i> Help</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="colours_tab">
+                    <p>
+                      I'm in Colours Tab.
+                    </p>
+                  </div>
+
+                  <div class="tab-pane" id="texture_tab"></div>
+
+                  <div class="tab-pane" id="tab_default_3"></div>
+
+                  <div class="tab-pane" id="tab_default_4"></div>
+
+                  <button id="add_ring" type="button" class="btn btn-primary" style="margin: auto 25%; width: 50%;">Add Ring</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="tab-pane" id="tab_default_2">
+          <div class="tab-pane" id="controls_tab">
             <p>
               I'm in Tab 2
             </p>
@@ -54,12 +84,12 @@
             <div class="checkbox"><label><input id="panCheckbox" type="checkbox" value="" checked>  <i class="material-icons">pan_tool</i> Panning </label></div>
             <div class="checkbox"><label><input id="zoomCheckbox" type="checkbox" value="" checked>  <i class="material-icons">zoom_in</i> Zoom </label></div>
           </div>
-          <div class="tab-pane" id="tab_default_3">
+          <div class="tab-pane" id="code_tab">
             <p>
               I'm in Tab 3
             </p>
           </div>
-          <div class="tab-pane" id="tab_default_4">
+          <div class="tab-pane" id="help_tab">
             <p>
               I'm in Tab 4
             </p>
@@ -73,7 +103,6 @@
       <div id="mat-select" style="padding:10px; width: 100%; height: 25%; position: relative;"></div>
       <div id="ring-meta" style="padding:10px; width: 100%; height: 40%; position: relative;"></div>
     -->
-      <button id="add_ring" type="button" class="btn btn-primary" style="position: absolute; margin: auto 25%; bottom: 10px; width: 50%;">Add Ring</button>
 
     </div>
   </div>

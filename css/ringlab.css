@@ -95,6 +95,21 @@ button {
 }
 /*end of keenthemes Tabbable Panel With Line*/
 
+/*no border for embedded tabs within a tab pane*/
+.tab-pane {
+  height: 100%;
+}
+.tab-pane > .tabbable-panel {
+  border: none;
+  padding: 0;
+}
+.tab-pane .tabbable-line > .nav-tabs > li.active {
+  border-width: 2px;
+}
+.tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+  border-width: 2px;
+}
+
 #side_bar {
   z-index: 1;
 
