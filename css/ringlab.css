@@ -120,3 +120,7 @@ button {
   background-color: white;
   position: absolute;
 }
+
+#editor {
+  height: 100%;
+}
