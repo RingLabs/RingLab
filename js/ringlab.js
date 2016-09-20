@@ -199,17 +199,7 @@ function addRing() {
 	objects.push( object );
 }
 
-function toggleZoom() {
-	controls.noZoom = controls.noZoom ? false : true;
-}
 
-function togglePan() {
-	controls.noPan = controls.noPan ? false : true;
-}
-
-function toggleRotate() {
-	controls.noRotate = controls.noRotate ? false : true;
-}
 
 window.onload = function () {
 	var rotationCheckboxInput = document.querySelector('#rotationCheckbox');
